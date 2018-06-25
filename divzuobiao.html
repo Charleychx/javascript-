@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>点击div显示其坐标</title>
+<style type="text/css">#obj{ width:500px; height:450px; background-color:#f00; position:relative;} </style>
+<script>
+window.onload=function()
+{
+document.getElementById("obj").onclick=function(evt)//得到div对象obj事件元素的控制权；evt定义一个事件对象
+{
+	var evt=evt||event;
+	evt.targTt=evt.Target||event.srcElement;
+	evt.getX=evt.getX||evt.offsetX;
+	evt.getY=evt.getY||evt.offsetY;
+	alert("相对于此div的X，Y坐标："+evt.getX+","+evt.getY);
+	}
+}
+</script>
+</head>
+
+<body>
+</body>
+<div id="obj"></div>
+</html>
